@@ -8,12 +8,12 @@ import { useSection } from "context/section";
 import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
 
-import terminalPortfolio from "@/public/projects/notepad.jpg";
-import haruFashion from "@/public/projectS/noteshub.jpg";
-import haruApi from "@/public/projects/pet.png";
-import talkmate from "@/public/projects/talkmate.jpg";
-import nextBookstore from "@/public/projects/portfolio.png";
-import shadcnAdmin from "@/public/projects/sims.png";
+// import terminalPortfolio from "@/public/projects/notepad.jpg";
+// import haruFashion from "@/public/projectS/noteshub.jpg";
+// import haruApi from "@/public/projects/pet.png";
+// import talkmate from "@/public/projects/talkmate.jpg";
+// import nextBookstore from "@/public/projects/portfolio.png";
+// import shadcnAdmin from "@/public/projects/sims.png";
 
 const ProjectSection: React.FC = () => {
   const { theme } = useTheme();
@@ -90,7 +90,7 @@ const projects = [
     type: "Frontend",
     image: (
       <Image
-        src={terminalPortfolio}
+        src="/projects/notepad.jpg"
         sizes="100vw"
         fill
         alt="HTML notepad"
@@ -109,7 +109,7 @@ const projects = [
     type: "Fullstack",
     image: (
       <Image
-        src={haruFashion}
+        src="/projectS/noteshub.jpg"
         sizes="100vw"
         fill
         alt="NotesHub"
@@ -128,7 +128,7 @@ const projects = [
     type: "Backend",
     image: (
       <Image
-        src={haruApi}
+        src="/projects/pet.png"
         sizes="100vw"
         fill
         alt="Personal-Expense-Tracker"
@@ -147,7 +147,7 @@ const projects = [
     type: "Frontend",
     image: (
       <Image
-        src={nextBookstore}
+        src="/projects/portfolio.png"
         sizes="100vw"
         fill
         alt="Pratik pol photography"
@@ -166,7 +166,7 @@ const projects = [
     type: "Backend",
     image: (
       <Image
-        src={shadcnAdmin}
+        src="/projects/sims.png"
         sizes="100vw"
         fill
         alt="Student Information Management System"
