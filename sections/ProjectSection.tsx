@@ -8,12 +8,12 @@ import { useSection } from "context/section";
 import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
 
-import terminalPortfolio from "../public/projects/notepad.jpg";
-import haruFashion from "../public/projectS/noteshub.jpg";
-import haruApi from "../public/projects/pet.png";
-import talkmate from "../public/projects/talkmate.jpg";
-import nextBookstore from "../public/projects/portfolio.png";
-import shadcnAdmin from "../public/projects/sims.png";
+import terminalPortfolio from "@/public/projects/notepad.jpg";
+import haruFashion from "@/public/projectS/noteshub.jpg";
+import haruApi from "@/public/projects/pet.png";
+import talkmate from "@/public/projects/talkmate.jpg";
+import nextBookstore from "@/public/projects/portfolio.png";
+import shadcnAdmin from "@/public/projects/sims.png";
 
 const ProjectSection: React.FC = () => {
   const { theme } = useTheme();
