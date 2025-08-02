@@ -71,7 +71,7 @@ const projects = [
     type: "Fullstack",
     image: (
       <Image
-        src={talkmate}
+        src="/projects/talkmate.jpg"
         sizes="100vw"
         fill
         alt="TalkMate"
