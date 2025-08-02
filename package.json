@@ -20,10 +20,6 @@
     "react-rough-notation": "^1.0.3",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
-<<<<<<< HEAD
-=======
-    "styled-jsx": "^5.1.7",
->>>>>>> 2679ead (Fix: Added styled-jsx dependency)
     "swiper": "^8.4.5"
   },
   "devDependencies": {
