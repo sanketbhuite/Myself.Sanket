@@ -99,7 +99,7 @@ const projects = [
     ),
     desc: "a application that allows users to write, save, open, and run HTML/JavaScript code. Features include a large text area for writing, buttons for saving and opening .txt files, and an iframe to display code output.",
     tags: ["HTML5", "CSS3", "JAVASCRIPT"],
-    liveUrl: "html-notepad.netlify.app",
+    liveUrl: "https://html-notepad.netlify.app/",
     codeUrl: "https://github.com/sanketbhuite/Simple-web-based-Notepad",
     bgColor: "bg-[#B4BEE0]",
     githubApi: "https://api.github.com/repos/sanketbhuite/Simple-web-based-Notepad",
