@@ -31,7 +31,7 @@ This portfolio is my digital space to showcase:
 ---
 
 ## 📸 Preview  
-![Portfolio Preview](./public/projects/portfolio.png)
+![Portfolio Preview](./public/projects/preview.png)
 
 ---
 
