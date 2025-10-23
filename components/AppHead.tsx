@@ -74,15 +74,7 @@ const AppHead: React.FC<Props> = ({
       <meta property="og:type" content={type} />
       <meta name="google-site-verification" content="yqPXC5OBEyiB6UZjtmspH-9YTIpOuErh7oSc2RgwVVY" />
     </Head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWWJZ1WZ21"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MWWJZ1WZ21');
-</script>
+    
   );
 };
 
