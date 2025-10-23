@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Script
         id="google-analytics"
         strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-MWWJZ1WZ21`}
       />
 
       <Script id="google-analytics-script" strategy="lazyOnload">
@@ -50,9 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-        page_path: window.location.pathname,
-        });
+        gtag('config', 'G-MWWJZ1WZ21');
     `}
       </Script>
       <Head>
