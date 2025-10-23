@@ -58,6 +58,15 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+      <!-- Google tag (gtag.js) -->
+<Script async src="https://www.googletagmanager.com/gtag/js?id=G-MWWJZ1WZ21"></Script>
+<Script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MWWJZ1WZ21');
+</Script>
       <div
         ref={cursorRef}
         className="hidden lg:block w-12 h-12 opacity-0 pointer-events-none rounded-full border-2 border-marrsgreen dark:border-carrigreen z-[9999] fixed -translate-x-1/2 -translate-y-1/2"
