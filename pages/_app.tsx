@@ -58,14 +58,21 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <!-- Google tag (gtag.js) -->
-<Script async src="https://www.googletagmanager.com/gtag/js?id=G-MWWJZ1WZ21"></Script>
-<Script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+     <Script
+  id="google-analytics"
+  strategy="afterInteractive"
+  src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+/>
 
-  gtag('config', 'G-MWWJZ1WZ21');
+<Script id="google-analytics-script" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+      page_path: window.location.pathname,
+    });
+  `}
 </Script>
       <div
         ref={cursorRef}
