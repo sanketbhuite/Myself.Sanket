@@ -72,6 +72,7 @@ const AppHead: React.FC<Props> = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image:alt" content={appOgImageAlt} />
       <meta property="og:type" content={type} />
+      <meta name="google-site-verification" content="yqPXC5OBEyiB6UZjtmspH-9YTIpOuErh7oSc2RgwVVY" />
     </Head>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MWWJZ1WZ21"></script>
