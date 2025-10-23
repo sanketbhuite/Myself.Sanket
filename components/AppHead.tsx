@@ -73,6 +73,15 @@ const AppHead: React.FC<Props> = ({
       <meta name="twitter:image:alt" content={appOgImageAlt} />
       <meta property="og:type" content={type} />
     </Head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWWJZ1WZ21"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MWWJZ1WZ21');
+</script>
   );
 };
 
