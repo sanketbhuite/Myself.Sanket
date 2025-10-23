@@ -201,7 +201,7 @@ const educationInfo = [
     subTitle: "Solapur University | 2023 ~ 2026",
     list: [
       "Studing computer science and software development",
-      "combines theoretical knowledge with cutting-edge technologies.",
+      "Awarded First Prize in the National Level Programming Competition 'Dexter Innofest 2023-24.'" ,
       "Got overall 9.63 CGPA in previous year",
     ],
   },
