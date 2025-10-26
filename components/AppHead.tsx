@@ -73,6 +73,7 @@ const AppHead: React.FC<Props> = ({
       <meta name="twitter:image:alt" content={appOgImageAlt} />
       <meta property="og:type" content={type} />
       <meta name="google-site-verification" content="yqPXC5OBEyiB6UZjtmspH-9YTIpOuErh7oSc2RgwVVY" />
+      <meta name="google-site-verification" content="PkVWKquJ6xLzhf6yEGInnMrnGVPTQFOnJrMpYoEHaOY" />
     </Head>
   );
 };
