@@ -16,6 +16,7 @@ import "swiper/css/pagination";
 
 // Example certificate images (replace with real paths)
 const certificates = [
+  "/certificates/nc1.jpg", "/certificates/nc2.jpg", "/certificates/nc3.jpg", "/certificates/nc4.jpg",
   "/certificates/c1.jpg", "/certificates/c2.jpg", "/certificates/c3.jpg", "/certificates/c4.jpg",
   "/certificates/c5.jpg", "/certificates/c6.jpg", "/certificates/c7.jpg", "/certificates/c8.png",
   "/certificates/c9.jpg", "/certificates/c10.jpg", "/certificates/c11.jpg", "/certificates/c12.jpg",
