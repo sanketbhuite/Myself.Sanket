@@ -12,7 +12,7 @@ const achievements = [
     title: "First Prize – National Level Programming Competition",
     issuer: "Punyashlok Ahilyadevi Holkar Solapur University",
     date: "March 2024",
-    image: "/achievements/programming.jpg",
+    image: "/achievements/programming.png",
     description:
       "Awarded First Prize in Dexter Innofest 2023-24 National Level Programming Competition. Secured top position as a first-year student competing against final-year students, demonstrating my programming ability.",
     tags: ["Programming", "National Level", "First Prize"],
