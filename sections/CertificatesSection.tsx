@@ -16,11 +16,14 @@ import "swiper/css/pagination";
 import "swiper/css/grid";
 // Example certificate images (replace with real paths)
 const certificates = [
-  "/certificates/nc1.jpg", "/certificates/nc2.jpg", "/certificates/nc3.jpg", "/certificates/nc4.jpg",
+  "/certificates/nc11.jpg", "/certificates/nc12.jpg", "/certificates/nc13.jpg",
+   "/certificates/nc5.jpg", "/certificates/nc6.jpg", "/certificates/nc7.jpg",
+  "/certificates/nc1.jpg", "/certificates/nc2.jpg", "/certificates/nc3.jpg","/certificates/nc4.jpg",
   "/certificates/c1.jpg", "/certificates/c2.jpg", "/certificates/c3.jpg", "/certificates/c4.jpg",
   "/certificates/c5.jpg", "/certificates/c6.jpg", "/certificates/c7.jpg", "/certificates/c8.png",
-  "/certificates/c9.jpg", "/certificates/c10.jpg", "/certificates/c11.jpg", "/certificates/c12.jpg",
-  "/certificates/c13.jpg", "/certificates/c14.jpg", "/certificates/c15.jpeg", "/certificates/c16.jpg",
+  "/certificates/c9.jpg", "/certificates/c10.jpg", "/certificates/c11.jpg", "/certificates/nc9.jpg",
+  "/certificates/nc10.jpg", "/certificates/nc8.jpg",  "/certificates/c12.jpg","/certificates/c13.jpg", 
+  "/certificates/c14.jpg", "/certificates/c15.jpeg", "/certificates/c16.jpg",
   "/certificates/c17.jpg", "/certificates/c18.jpg", "/certificates/c19.jpg", "/certificates/c20.jpg",
   "/certificates/c21.jpeg", "/certificates/ci1.jpeg", "/certificates/ci2.jpeg", "/certificates/ci3.jpeg",
   "/certificates/ci4.jpeg", "/certificates/ci6.jpeg"
