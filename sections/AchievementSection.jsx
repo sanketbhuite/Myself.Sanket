@@ -80,16 +80,22 @@ const AchievementsSection = () => {
               hover:scale-[1.02] transition duration-300"
             >
               
-              <div className="relative w-full h-[200px] overflow-hidden">
+              <div className="relative w-full h-[260px] overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition duration-500"
+                  className="object-cover group-hover:scale-105 transition duration-500"
                 />
+              
+                <div className="absolute inset-0 bg-gradient-to-b 
+                from-transparent 
+                via-transparent 
+                to-[#23343f] 
+                dark:to-[#23343f]" />
               </div>
 
-              <div className="p-5">
+              <div className="px-5 pb-5 pt-3">
                 <h3 className="text-lg font-semibold text-[#00C896] mb-1">
                   {item.title}
                 </h3>
