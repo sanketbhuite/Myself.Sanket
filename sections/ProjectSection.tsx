@@ -86,23 +86,23 @@ const projects = [
     githubApi: "https://api.github.com/repos/sanketbhuite/TalkMate-v1.0",
   },
   {
-    title: "HTML notepad",
-    type: "Frontend",
+    title: "PlacementPrep",
+    type: "Fullstack",
     image: (
       <Image
-        src="/projects/notepad.jpg"
+        src="/projects/placementprep.jpg"
         sizes="100vw"
         fill
-        alt="HTML notepad"
+        alt="PlacementPrep"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "a application that allows users to write, save, open, and run HTML/JavaScript code. Features include a large text area for writing, buttons for saving and opening .txt files, and an iframe to display code output.",
-    tags: ["HTML5", "CSS3", "JAVASCRIPT"],
-    liveUrl: "https://html-notepad.netlify.app/",
-    codeUrl: "https://github.com/sanketbhuite/Simple-web-based-Notepad",
+    desc: "Placement preparation platform with mock tests, aptitude practice, dashboard analytics, and AI chatbot built using React and Spring Boot.",
+    tags: ["React", "Spring Boot", "Java", "RestAPI"],
+    liveUrl: "https://github.com/sanketbhuite/PlacementPrep",
+    codeUrl: "https://github.com/sanketbhuite/PlacementPrep",
     bgColor: "bg-[#B4BEE0]",
-    githubApi: "https://api.github.com/repos/sanketbhuite/Simple-web-based-Notepad",
+    githubApi: "https://api.github.com/repos/sanketbhuite/PlacementPrep",
   },
   {
     title: "NotesHub™",
@@ -124,23 +124,23 @@ const projects = [
     githubApi: "https://api.github.com/repos/sanketbhuite/NotesHub-v0",
   },
   {
-    title: "Personal Expense Tracker",
-    type: "Backend",
+    title: "AES-GCM Image Encryption & Decryption Tool",
+    type: "Cybersecurity",
     image: (
       <Image
-        src="/projects/pet.png"
+        src="/projects/aes-gcm.png"
         sizes="100vw"
         fill
-        alt="Personal-Expense-Tracker"
+        alt="AES-GCM Image Encryption & Decryption Tool"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "a simple personal expense tracker that allows users to manage and view their expenses effectively.",
-    tags: ["Python"],
-    liveUrl: "https://github.com/sanketbhuite/Personal-Expense-Tracker",
-    codeUrl: "https://github.com/sanketbhuite/Personal-Expense-Tracker",
+    desc: "A modern Windows desktop application built using Java Swing that allows users to securely encrypt and decrypt image files using AES-GCM, an industry-standard encryption algorithm.",
+    tags: ["Java", "AES-GCM", "Cryptography", "Swing"],
+    liveUrl: "https://github.com/sanketbhuite/AES-GCM-Image-Encryption-Decryption-Tool",
+    codeUrl: "https://github.com/sanketbhuite/AES-GCM-Image-Encryption-Decryption-Tool",
     bgColor: "bg-[#C5E4E7]",
-    githubApi: "https://api.github.com/repos/sanketbhuite/Personal-Expense-Tracker",
+    githubApi: "https://api.github.com/repos/sanketbhuite/AES-GCM-Image-Encryption-Decryption-Tool",
   },
   {
     title: "Photographer Portfolio",
@@ -162,23 +162,23 @@ const projects = [
     githubApi: "https://api.github.com/repos/sanketbhuite/pratik-pol-photography",
   },
   {
-    title: "Student Information Management System",
-    type: "Backend",
+    title: "FlowFleet",
+    type: "Fullstack",
     image: (
       <Image
-        src="/projects/sims.png"
+        src="/projects/flowfleet.png"
         sizes="100vw"
         fill
-        alt="Student Information Management System"
+        alt="FlowFleet"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: " The program allows you to perform basic operations such as adding, searching, updating, and deleting student records. The data is stored in a plain text file.",
-    tags: ["PHP"],
-    liveUrl: "https://github.com/sanketbhuite/Student-Information-Management-System-PHP",
-    codeUrl: "https://github.com/sanketbhuite/Student-Information-Management-System-PHP",
+    desc: " a fleet management system that provides real-time tracking, maintenance scheduling, and route optimization for efficient fleet operations.",
+    tags: ["React", "Django", "Python", "RestAPI"],
+    liveUrl: "https://github.com/sanketbhuite/FlowFleet",
+    codeUrl: "https://github.com/sanketbhuite/FlowFleet",
     bgColor: "bg-[#FBFBFB]",
-    githubApi: "https://api.github.com/repos/sanketbhuite/Student-Information-Management-System-PHP",
+    githubApi: "https://api.github.com/repos/sanketbhuite/FlowFleet",
   },
 ];
 
