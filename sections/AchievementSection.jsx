@@ -21,9 +21,9 @@ const achievements = [
     title: "All India West Zone Inter-University Championship",
     issuer: "Bhupal Nobles University, Udaipur",
     date: "Dec 2025",
-    image: "/achievements/basketball.jpg",
+    image: "/achievements/basketball.png",
     description:
-      "Selected to represent Punyashlok Ahilyadevi Holkar Solapur University in Basketball at All India West Zone Inter-University Championship. Recognition of consistent performance and teamwork at national level.",
+      "Selected to represent Punyashlok Ahilyadevi Holkar Solapur University in Basketball at All India West Zone Inter-University Championship at Bhupal Nobles University, Udaipur. Recognition of consistent performance and teamwork at national level.",
     tags: ["Basketball", "University Team", "National Level"],
   },
   {
@@ -32,7 +32,7 @@ const achievements = [
     date: "March 2026",
     image: "/achievements/allround.jpg",
     description:
-      "Recognized at the college Annual Function for achievements in both sports and cultural activities. awarded for Selection for the University Basketball Team and 1st Prize in the Dance Competition.",
+      "Recognized at the college Annual Function for achievements in both sports and cultural activities. Selected for the University Basketball Team, reflecting consistent performance and dedication on the court, and awarded 1st Prize in the Dance Competition.",
     tags: ["Sports", "Dance", "All-Rounder"],
   },
 ];
