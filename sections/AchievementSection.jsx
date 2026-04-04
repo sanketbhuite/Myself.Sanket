@@ -14,7 +14,7 @@ const achievements = [
     date: "March 2024",
     image: "/achievements/programming.jpg",
     description:
-      "Awarded First Prize in Dexter Innofest 2023-24 National Level Programming Competition. Secured top position as a first-year student competing against senior participants including final-year students, demonstrating strong problem-solving and programming skills.",
+      "Awarded First Prize in Dexter Innofest 2023-24 National Level Programming Competition. Secured top position as a first-year student competing against final-year students, demonstrating strong problem-solving and programming ability.",
     tags: ["Programming", "National Level", "First Prize"],
   },
   {
@@ -23,7 +23,7 @@ const achievements = [
     date: "Dec 2025",
     image: "/achievements/basketball.jpg",
     description:
-      "Selected to represent Punyashlok Ahilyadevi Holkar Solapur University in Basketball at All India West Zone Inter-University Championship. Recognition of consistent performance, teamwork, and competing at national level.",
+      "Selected to represent Punyashlok Ahilyadevi Holkar Solapur University in Basketball at All India West Zone Inter-University Championship. Recognition of consistent performance and teamwork at national level.",
     tags: ["Basketball", "University Team", "National Level"],
   },
   {
@@ -32,32 +32,28 @@ const achievements = [
     date: "March 2026",
     image: "/achievements/allround.jpg",
     description:
-      "Recognized for excellence in sports and cultural activities. Selected for University Basketball Team and secured 1st Prize in Dance Competition, highlighting versatility and active participation beyond academics.",
+      "Recognized for excellence in sports and cultural activities. Selected for University Basketball Team and secured 1st Prize in Dance Competition.",
     tags: ["Sports", "Dance", "All-Rounder"],
   },
 ];
 
-const AchievementsSection: React.FC = () => {
+const AchievementsSection = () => {
   const { theme } = useTheme();
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const elementRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef(null);
+  const elementRef = useRef(null);
 
   const isOnScreen = useOnScreen(elementRef);
   const achievementSection = useScrollActive(sectionRef);
   const { onSectionChange } = useSection();
 
   useEffect(() => {
-    achievementSection && onSectionChange!("achievements");
+    achievementSection && onSectionChange("achievements");
   }, [achievementSection]);
 
   return (
     <div className="bg-[#F5F5F5] dark:bg-[#1B2731]">
-      <section
-        ref={sectionRef}
-        id="achievements"
-        className="section md:px-10"
-      >
-        {/* Heading */}
+      <section ref={sectionRef} id="achievements" className="section md:px-10">
+        
         <div className="text-center">
           <RoughNotation
             type="underline"
@@ -66,19 +62,15 @@ const AchievementsSection: React.FC = () => {
             order={1}
             show={isOnScreen}
           >
-            <h2 className="section-heading">
-              Achievements & Honors
-            </h2>
+            <h2 className="section-heading">Achievements & Honors</h2>
           </RoughNotation>
         </div>
 
-        {/* Subtitle */}
         <div className="text-center mb-12" ref={elementRef}>
           A few milestones that reflect consistency, leadership,
           and performance beyond academics.
         </div>
 
-        {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {achievements.map((item, index) => (
             <div
@@ -87,18 +79,16 @@ const AchievementsSection: React.FC = () => {
               bg-white dark:bg-[#23343f]
               hover:scale-[1.02] transition duration-300"
             >
-              {/* Image */}
+              
               <div className="relative w-full h-[200px] overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="group-hover:scale-110 transition duration-500"
+                  fill
+                  className="object-cover group-hover:scale-110 transition duration-500"
                 />
               </div>
 
-              {/* Content */}
               <div className="p-5">
                 <h3 className="text-lg font-semibold text-[#00C896] mb-1">
                   {item.title}
@@ -112,7 +102,6 @@ const AchievementsSection: React.FC = () => {
                   {item.description}
                 </p>
 
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {item.tags.map((tag, i) => (
                     <span
@@ -124,6 +113,7 @@ const AchievementsSection: React.FC = () => {
                     </span>
                   ))}
                 </div>
+
               </div>
             </div>
           ))}
