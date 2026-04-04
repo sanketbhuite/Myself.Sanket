@@ -26,6 +26,15 @@ const navLinks = [
     text: "Projects",
   },
   {
+  url: "#achievements",
+  svg: (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+      <path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.8 7.2 16.9l.9-5.4L4.2 7.7l5.4-.8L12 2z"/>
+    </svg>
+  ),
+  text: "Achievements",
+},
+  {
   url: "#certificates",
   svg: (
      <svg
