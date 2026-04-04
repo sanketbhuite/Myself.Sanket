@@ -14,7 +14,7 @@ const achievements = [
     date: "March 2024",
     image: "/achievements/programming.jpg",
     description:
-      "Awarded First Prize in Dexter Innofest 2023-24 National Level Programming Competition. Secured top position as a first-year student competing against final-year students, demonstrating strong problem-solving and programming ability.",
+      "Awarded First Prize in Dexter Innofest 2023-24 National Level Programming Competition. Secured top position as a first-year student competing against final-year students, demonstrating my programming ability.",
     tags: ["Programming", "National Level", "First Prize"],
   },
   {
@@ -32,7 +32,7 @@ const achievements = [
     date: "March 2026",
     image: "/achievements/allround.jpg",
     description:
-      "Recognized for excellence in sports and cultural activities. Selected for University Basketball Team and secured 1st Prize in Dance Competition.",
+      "Recognized at the college Annual Function for achievements in both sports and cultural activities. awarded for Selection for the University Basketball Team and 1st Prize in the Dance Competition.",
     tags: ["Sports", "Dance", "All-Rounder"],
   },
 ];
