@@ -9,11 +9,11 @@ import useScrollActive from "hooks/useScrollActive";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Grid } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+import "swiper/css/grid";
 // Example certificate images (replace with real paths)
 const certificates = [
   "/certificates/nc1.jpg", "/certificates/nc2.jpg", "/certificates/nc3.jpg", "/certificates/nc4.jpg",
@@ -60,45 +60,54 @@ const CertificateSection: React.FC = () => {
           But these certificates does.
         </div>
         <Swiper
-          modules={[Navigation, Pagination]}
-          pagination={{ dynamicBullets: true }}
-          wrapperTag="ul"
-          navigation
-          className="swiper-padding-mobile xs:swiper-padding"
-          breakpoints={{
-            100: {
-              slidesPerView: "auto",
-              spaceBetween: 50,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 40,
-              centeredSlides: true,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 50,
-              centeredSlides: false,
-            },
-          }}
-        >
-          {certificates.map((src, index) => (
-            <SwiperSlide key={index} tag="li">
-              <div className="rounded-xl overflow-hidden shadow-lg bg-white dark:bg-[#23343f] p-4">
-                <Image
-                  src={src}
-                  alt={`Certificate ${index + 1}`}
-                  width={500}
-                  height={300}
-                  layout="responsive"
-                  objectFit="contain"
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
-    </div>
+  modules={[Navigation, Pagination, Grid]}
+  navigation
+  pagination={{ dynamicBullets: true }}
+  className="swiper-padding-mobile xs:swiper-padding"
+  breakpoints={{
+    100: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      grid: {
+        rows: 2,
+        fill: "row",
+      },
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+      grid: {
+        rows: 2,
+        fill: "row",
+      },
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      grid: {
+        rows: 2,
+        fill: "row",
+      },
+    },
+  }}
+>
+  {certificates.map((src, index) => (
+    <SwiperSlide key={index}>
+      <div className="rounded-xl overflow-hidden shadow-lg bg-white dark:bg-[#23343f] p-4">
+        <Image
+          src={src}
+          alt={`Certificate ${index + 1}`}
+          width={500}
+          height={300}
+          layout="responsive"
+          objectFit="contain"
+        />
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+</section>
+</div>
   );
 };
 
