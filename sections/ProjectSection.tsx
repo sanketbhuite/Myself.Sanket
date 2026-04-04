@@ -90,7 +90,7 @@ const projects = [
     type: "Fullstack",
     image: (
       <Image
-        src="/projects/placementprep.jpg"
+        src="/projects/placementprep.png"
         sizes="100vw"
         fill
         alt="PlacementPrep"
