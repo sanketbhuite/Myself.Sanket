@@ -138,6 +138,10 @@ const navLinks = [
     text: "Projects",
   },
   {
+    url: "#achievements",
+    text: "Achievements",
+  },
+  {
     url: "#certificates",
     text: "certificates",
   },
