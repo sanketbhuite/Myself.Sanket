@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react";
+
 type Props = {
   noPadding?: boolean;
 };
 
 const Footer: React.FC<Props> = ({ noPadding = false }) => {
+  const [visits, setVisits] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch("https://api.counterapi.dev/v2/sanket-bhuites-team-3673/first-counter-3673")
+      .then((res) => res.json())
+      .then((data) => setVisits(data.data?.up_count ?? data.count ?? null))
+      .catch(() => setVisits(null));
+  }, []);
+
   return (
     <footer
       className={`${noPadding ? "pb-4" : "pb-24"} md:pb-4 text-center mt-auto`}
@@ -37,6 +48,10 @@ const Footer: React.FC<Props> = ({ noPadding = false }) => {
           />
         </svg>{" "}
         by Sanket
+      </div>
+
+      <div className="text-sm opacity-70 mt-2">
+        👀 Visitors: {visits ?? "..."}
       </div>
     </footer>
   );
@@ -84,33 +99,33 @@ const socialLinks = [
     link: "https://x.com/SanketBhuite",
     svg: (
       <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
->
-  <path d="M20.462 3H17.39l-4.297 5.19-4.026-5.19H3.538l6.288 8.016L3 21h3.072l4.607-5.563L15.96 21H21l-6.706-8.553L20.462 3zm-3.258 1.476-4.96 6.011L17.259 20h-1.748l-5.28-6.8L6.67 20H5.902l5.244-6.327L4.678 4.98h1.754l4.54 5.851 4.232-5.851h1.999z"/>
-</svg>
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
+      >
+        <path d="M20.462 3H17.39l-4.297 5.19-4.026-5.19H3.538l6.288 8.016L3 21h3.072l4.607-5.563L15.96 21H21l-6.706-8.553L20.462 3zm-3.258 1.476-4.96 6.011L17.259 20h-1.748l-5.28-6.8L6.67 20H5.902l5.244-6.327L4.678 4.98h1.754l4.54 5.851 4.232-5.851h1.999z"/>
+      </svg>
     ),
   },
   {
-  id: 4,
-  title: "Sanket Bhuite's Resume",
-  link: "/CV1.pdf",
-  svg: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="currentColor"
-      className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
-      viewBox="0 0 24 24"
-    >
-      <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 4h7v5h5v11H6V4zm8 8v2H8v-2h6zm0 4v2H8v-2h6z"/>
-    </svg>
-  ),
-},
+    id: 4,
+    title: "Sanket Bhuite's Resume",
+    link: "/CV1.pdf",
+    svg: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="currentColor"
+        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
+        viewBox="0 0 24 24"
+      >
+        <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 4h7v5h5v11H6V4zm8 8v2H8v-2h6zm0 4v2H8v-2h6z"/>
+      </svg>
+    ),
+  },
 ];
 
 export default Footer;
