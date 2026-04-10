@@ -13,8 +13,15 @@ useEffect(() => {
     { method: "POST" }
   )
     .then((res) => res.json())
-    .then((data) => setVisits(data.up_count))  // <-- fix here
-    .catch(() => setVisits(null));
+    .then((data) => {
+      console.log("full data:", data);
+      console.log("up_count:", data?.data?.up_count);
+      setVisits(data?.data?.up_count ?? null);
+    })
+    .catch((err) => {
+      console.error("fetch error:", err);
+      setVisits(null);
+    });
 }, []);
 
   return (
@@ -54,7 +61,7 @@ useEffect(() => {
       </div>
 
       <div className="text-sm opacity-70 mt-2">
-        👀 Visitors: {visits ?? "..."}
+        👀 Visitors: {visits === null ? "loading..." : visits}
       </div>
     </footer>
   );
