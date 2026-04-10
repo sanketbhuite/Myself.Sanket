@@ -13,7 +13,25 @@ useEffect(() => {
   )
     .then((res) => res.json())
     .then((data) => {
-      setVisits(data?.data?.up_count ?? null);
+      const target = data?.data?.up_count ?? 0;
+
+      const duration = 900;
+      const startTime = performance.now();
+
+      const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+      const animate = (now: number) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutCubic(progress);
+
+        const value = Math.floor(eased * target);
+        setVisits(value);
+
+        if (progress < 1) requestAnimationFrame(animate);
+      };
+
+      requestAnimationFrame(animate);
     })
     .catch(() => setVisits(null));
 }, []);
@@ -54,8 +72,25 @@ useEffect(() => {
         by Sanket
       </div>
 
-      <div className="text-sm opacity-70 mt-2">
-      👀 Visitors: {visits === null ? "loading..." : visits}
+      <div className="text-xs opacity-70 mt-2 flex items-center justify-center gap-1">
+        <span>👀</span>
+        <span className="tracking-wide">Visitors:</span>
+
+        <span
+          className="
+            font-mono
+            px-2
+            py-[2px]
+            rounded-md
+            bg-white/5
+            backdrop-blur
+            border border-white/10
+            shadow-[0_0_8px_rgba(16,185,129,0.25)]
+            animate-[pop_.35s_ease-out]
+          "
+        >
+          {visits === null ? "..." : visits.toLocaleString()}
+        </span>
       </div>
     </footer>
   );
