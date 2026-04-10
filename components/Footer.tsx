@@ -13,7 +13,7 @@ useEffect(() => {
     { method: "POST" }
   )
     .then((res) => res.json())
-    .then((data) => setVisits(data.data.up_count))  // <-- fix here
+    .then((data) => setVisits(data.up_count))  // <-- fix here
     .catch(() => setVisits(null));
 }, []);
 
