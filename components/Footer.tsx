@@ -10,19 +10,18 @@ const Footer: React.FC<Props> = ({ noPadding = false }) => {
 useEffect(() => {
   fetch(
     "https://api.counterapi.dev/v2/sanket-bhuites-team-3673/first-counter-3673/up",
-    {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_COUNTER_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-    }
+    { method: "POST" }
   )
     .then((res) => res.json())
     .then((data) => {
+      console.log("full data:", data);
+      console.log("up_count:", data?.data?.up_count);
       setVisits(data?.data?.up_count ?? null);
     })
-    .catch(() => setVisits(null));
+    .catch((err) => {
+      console.error("fetch error:", err);
+      setVisits(null);
+    });
 }, []);
 
   return (
@@ -62,7 +61,7 @@ useEffect(() => {
       </div>
 
       <div className="text-sm opacity-70 mt-2">
-        👀 Visitors: {visits === null ? "loading..." : visits}
+      👀 Visitors: {visits === null ? "loading..." : visits}
       </div>
     </footer>
   );
