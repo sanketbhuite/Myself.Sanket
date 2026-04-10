@@ -8,20 +8,14 @@ const Footer: React.FC<Props> = ({ noPadding = false }) => {
   const [visits, setVisits] = useState<number | null>(null);
 
 useEffect(() => {
-  fetch(
-    "https://api.counterapi.dev/v2/sanket-bhuites-team-3673/first-counter-3673/up",
-    { method: "POST" }
-  )
+  const url =
+    "https://api.counterapi.dev/v2/sanket-bhuites-team-3673/first-counter-3673";
+
+  fetch(url + "/up", { method: "POST" })
+    .then(() => fetch(url))
     .then((res) => res.json())
-    .then((data) => {
-      console.log("full data:", data);
-      console.log("up_count:", data?.data?.up_count);
-      setVisits(data?.data?.up_count ?? null);
-    })
-    .catch((err) => {
-      console.error("fetch error:", err);
-      setVisits(null);
-    });
+    .then((data) => setVisits(data?.data?.up_count))
+    .catch(() => setVisits(null));
 }, []);
 
   return (
