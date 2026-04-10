@@ -7,14 +7,20 @@ type Props = {
 const Footer: React.FC<Props> = ({ noPadding = false }) => {
   const [visits, setVisits] = useState<number | null>(null);
 
-  useEffect(() => {
+useEffect(() => {
   fetch(
     "https://api.counterapi.dev/v2/sanket-bhuites-team-3673/first-counter-3673/up",
     { method: "POST" }
   )
     .then((res) => res.json())
-    .then((data) => setVisits(data.value))
-    .catch(() => setVisits(null));
+    .then((data) => {
+      console.log("Counter API response:", data); // <-- add this
+      setVisits(data.value);
+    })
+    .catch((err) => {
+      console.error("Counter API error:", err); // <-- and this
+      setVisits(null);
+    });
 }, []);
 
   return (
