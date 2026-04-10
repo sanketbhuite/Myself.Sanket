@@ -13,7 +13,7 @@ const Footer: React.FC<Props> = ({ noPadding = false }) => {
     { method: "POST" }
   )
     .then((res) => res.json())
-    .then((data) => setVisits(data.data?.up_count ?? null))
+    .then((data) => setVisits(data.value))
     .catch(() => setVisits(null));
 }, []);
 
