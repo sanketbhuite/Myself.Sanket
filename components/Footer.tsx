@@ -8,13 +8,13 @@ const Footer: React.FC<Props> = ({ noPadding = false }) => {
   const [visits, setVisits] = useState<number | null>(null);
 
 useEffect(() => {
-  const url =
-    "https://api.counterapi.dev/v2/sanket-bhuites-team-3673/first-counter-3673";
-
-  fetch(url + "/up", { method: "POST" })
-    .then(() => fetch(url))
+  fetch(
+    "https://api.counterapi.dev/v2/sanket-bhuites-team-3673/first-counter-3673/up"
+  )
     .then((res) => res.json())
-    .then((data) => setVisits(data?.data?.up_count))
+    .then((data) => {
+      setVisits(data?.data?.up_count ?? null);
+    })
     .catch(() => setVisits(null));
 }, []);
 
