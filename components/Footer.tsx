@@ -13,14 +13,8 @@ useEffect(() => {
     { method: "POST" }
   )
     .then((res) => res.json())
-    .then((data) => {
-      console.log("Counter API response:", data); // <-- add this
-      setVisits(data.value);
-    })
-    .catch((err) => {
-      console.error("Counter API error:", err); // <-- and this
-      setVisits(null);
-    });
+    .then((data) => setVisits(data.data.up_count))  // <-- fix here
+    .catch(() => setVisits(null));
 }, []);
 
   return (
