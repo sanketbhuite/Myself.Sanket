@@ -17,7 +17,7 @@ This portfolio is my digital space to showcase:
 ## 🛠️ Tech Stack  
 - **Framework**: Next.js 13  
 - **Styling**: Tailwind CSS  
-- **Deployment**: Netlify  
+- **Deployment**: Netlify, Vercel
 - **Version Control**: Git + GitHub  
 
 ---
