@@ -12,7 +12,7 @@ import AchievementSection from "@/sections/AchievementSection";
 import CertificatesSection from "@/sections/CertificatesSection";
 import ContactSection from "@/sections/ContactSection";
 import Footer from "@/components/Footer";
-
+import { Analytics } from "@vercel/analytics/next"
 import { getAllPosts } from "utils/api";
 import { MdxMeta } from "../pages/blog/posts/[slug]";
 
@@ -51,6 +51,7 @@ const Home: NextPage<Props> = ({ blogPosts }) => {
             <CertificatesSection />
             <ContactSection />
           </main>
+          <Analytics />
           <SocialLinks page="index" />
           <Footer />
         </div>
