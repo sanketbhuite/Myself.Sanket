@@ -108,7 +108,7 @@ const socialLinks = [
   {
   id: 4,
   title: "Sanket Bhuite's Resume",
-  link: "/CV1.pdf",
+  link: "/bsanketresume.pdf",
   svg: (
     <svg
       xmlns="http://www.w3.org/2000/svg"
