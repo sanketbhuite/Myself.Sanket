@@ -35,15 +35,15 @@ const achievements = [
       "Recognized at the college Annual Function for achievements in both sports and cultural activities. Selected for the University Basketball Team, reflecting consistent performance and dedication on the court, and awarded 1st Prize in the Dance Competition.",
     tags: ["Sports", "Dance", "All-Rounder"],
   },
-  {
-    title: "Published Poet – Manadesh Magazine (2025–26)",
-    issuer: "Sangola College",
-    date: "2025 - Present",
-    image: "/achievements/poetry.jpg",
-    description:
-      "Recognized for expressing creativity through poetry and spoken word performances, showcasing strong emotional storytelling, originality, and artistic expression alongside academic and technical pursuits.",
-    tags: ["Poetry", "Creative Writing", "Artistic Expression"],
-  },
+  // {
+  //   title: "Published Poet – Manadesh Magazine (2025–26)",
+  //   issuer: "Sangola College",
+  //   date: "2025 - Present",
+  //   image: "/achievements/poetry.jpg",
+  //   description:
+  //     "Recognized for expressing creativity through poetry and spoken word performances, showcasing strong emotional storytelling, originality, and artistic expression alongside academic and technical pursuits.",
+  //   tags: ["Poetry", "Creative Writing", "Artistic Expression"],
+  // },
 ];
 
 const AchievementsSection = () => {
