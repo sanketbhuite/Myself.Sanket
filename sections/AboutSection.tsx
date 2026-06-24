@@ -202,7 +202,7 @@ const educationInfo = [
     list: [
       "Studing computer science and software development",
       "Awarded First Prize in the National Level Programming Competition 'Dexter Innofest 2023-24.'" ,
-      "Got overall 9.63 CGPA in previous year",
+      "Got overall 9.15 CGPA",
     ],
   },
   {
