@@ -49,15 +49,66 @@ const achievements = [
 const AchievementsSection = () => {
   const { theme } = useTheme();
   const sectionRef = useRef(null);
-  const elementRef = useRef(null);
+const elementRef = useRef(null);
+const scrollRef = useRef(null);
+
+const isDragging = useRef(false);
+const startX = useRef(0);
+const scrollLeft = useRef(0);
 
   const isOnScreen = useOnScreen(elementRef);
   const achievementSection = useScrollActive(sectionRef);
   const { onSectionChange } = useSection();
 
-  useEffect(() => {
-    achievementSection && onSectionChange("achievements");
-  }, [achievementSection]);
+ const scroll = (direction) => {
+  if (!scrollRef.current) return;
+
+  scrollRef.current.scrollBy({
+    left: direction === "left" ? -420 : 420,
+    behavior: "smooth",
+  });
+};
+
+const handleWheel = (e) => {
+  if (window.innerWidth < 1024) return;
+
+  if (!scrollRef.current) return;
+
+  e.preventDefault();
+
+  scrollRef.current.scrollLeft += e.deltaY;
+};
+
+const handleMouseDown = (e) => {
+  if (!scrollRef.current) return;
+
+  isDragging.current = true;
+  startX.current = e.pageX - scrollRef.current.offsetLeft;
+  scrollLeft.current = scrollRef.current.scrollLeft;
+};
+
+const handleMouseLeave = () => {
+  isDragging.current = false;
+};
+
+const handleMouseUp = () => {
+  isDragging.current = false;
+};
+
+const handleMouseMove = (e) => {
+  if (!isDragging.current || !scrollRef.current) return;
+
+  e.preventDefault();
+
+  const x = e.pageX - scrollRef.current.offsetLeft;
+  const walk = (x - startX.current) * 2;
+
+  scrollRef.current.scrollLeft = scrollLeft.current - walk;
+};
+
+useEffect(() => {
+  achievementSection && onSectionChange("achievements");
+}, [achievementSection]);
 
   return (
     <div className="bg-[#F5F5F5] dark:bg-[#1B2731]">
@@ -80,16 +131,74 @@ const AchievementsSection = () => {
           and performance beyond academics.
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="relative mt-8">
+
+  {/* Left Fade */}
+  <div className="hidden lg:block absolute left-0 top-0 h-full w-16 z-20 pointer-events-none bg-gradient-to-r from-[#F5F5F5] dark:from-[#1B2731] to-transparent" />
+
+  {/* Right Fade */}
+  <div className="hidden lg:block absolute right-0 top-0 h-full w-16 z-20 pointer-events-none bg-gradient-to-l from-[#F5F5F5] dark:from-[#1B2731] to-transparent" />
+
+  {/* Left Button */}
+  <button
+    onClick={() => scroll("left")}
+    className="hidden lg:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white/90 dark:bg-[#23343f]/90 shadow-xl items-center justify-center hover:scale-110 transition"
+  >
+    ←
+  </button>
+
+  {/* Right Button */}
+  <button
+    onClick={() => scroll("right")}
+    className="hidden lg:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white/90 dark:bg-[#23343f]/90 shadow-xl items-center justify-center hover:scale-110 transition"
+  >
+    →
+  </button>
+
+  <div
+    ref={scrollRef}
+    onWheel={handleWheel}
+    onMouseDown={handleMouseDown}
+    onMouseLeave={handleMouseLeave}
+    onMouseUp={handleMouseUp}
+    onMouseMove={handleMouseMove}
+    className="
+      flex
+      gap-8
+      overflow-x-auto
+      overflow-y-hidden
+      snap-x
+      snap-mandatory
+      scroll-smooth
+      hide-scrollbar
+      cursor-grab
+      active:cursor-grabbing
+      px-2
+      pb-4
+    "
+  >
           {achievements.map((item, index) => (
             <div
-              key={index}
-              className="group rounded-xl overflow-hidden shadow-lg 
-              bg-white dark:bg-[#23343f]
-              hover:scale-[1.02] transition duration-300"
-            >
+  key={index}
+  className="
+    group
+    flex-shrink-0
+    snap-center
+    w-[330px]
+    md:w-[360px]
+    rounded-xl
+    overflow-hidden
+    shadow-lg
+    bg-white
+    dark:bg-[#23343f]
+    hover:shadow-2xl
+    hover:-translate-y-3
+    transition-all
+    duration-300
+  "
+>
               
-              <div className="relative w-full h-[260px] overflow-hidden">
+              <div className="relative w-full h-[220px] overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -113,7 +222,7 @@ const AchievementsSection = () => {
                   {item.issuer} • {item.date}
                 </p>
 
-                <p className="text-sm leading-relaxed mb-4">
+                <p className="text-sm leading-relaxed mb-4 line-clamp-3">
                   {item.description}
                 </p>
 
@@ -132,6 +241,7 @@ const AchievementsSection = () => {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </section>
     </div>
