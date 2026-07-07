@@ -76,12 +76,15 @@ const handleWheel = (e) => {
 
   e.preventDefault();
 
-  scrollRef.current.scrollLeft += e.deltaY;
+  scrollRef.current.scrollBy({
+  left: e.deltaY,
+  behavior: "auto",
+});
 };
 
 const handleMouseDown = (e) => {
   if (!scrollRef.current) return;
-
+ scrollRef.current.style.cursor = "grabbing";
   isDragging.current = true;
   startX.current = e.pageX - scrollRef.current.offsetLeft;
   scrollLeft.current = scrollRef.current.scrollLeft;
@@ -89,10 +92,15 @@ const handleMouseDown = (e) => {
 
 const handleMouseLeave = () => {
   isDragging.current = false;
+if (scrollRef.current)
+    scrollRef.current.style.cursor = "grab";
 };
 
 const handleMouseUp = () => {
   isDragging.current = false;
+
+  if (scrollRef.current)
+    scrollRef.current.style.cursor = "grab";
 };
 
 const handleMouseMove = (e) => {
@@ -144,7 +152,20 @@ useEffect(() => {
     onClick={() => scroll("left")}
     className="hidden lg:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white/90 dark:bg-[#23343f]/90 shadow-xl items-center justify-center hover:scale-110 transition"
   >
-    ←
+   <svg
+  xmlns="http://www.w3.org/2000/svg"
+  className="w-5 h-5"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+  strokeWidth={2.5}
+>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M15 19l-7-7 7-7"
+  />
+</svg>
   </button>
 
   {/* Right Button */}
@@ -152,11 +173,27 @@ useEffect(() => {
     onClick={() => scroll("right")}
     className="hidden lg:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white/90 dark:bg-[#23343f]/90 shadow-xl items-center justify-center hover:scale-110 transition"
   >
-    →
+   <svg
+  xmlns="http://www.w3.org/2000/svg"
+  className="w-5 h-5"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+  strokeWidth={2.5}
+>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M9 5l7 7-7 7"
+  />
+</svg>
   </button>
 
   <div
     ref={scrollRef}
+    style={{
+  WebkitOverflowScrolling: "touch",
+}}
     onWheel={handleWheel}
     onMouseDown={handleMouseDown}
     onMouseLeave={handleMouseLeave}
@@ -172,8 +209,8 @@ useEffect(() => {
       scroll-smooth
       hide-scrollbar
       cursor-grab
-      active:cursor-grabbing
-      px-2
+      select-none
+      pl-8 pr-24 lg:pr-32
       pb-4
     "
   >
@@ -183,9 +220,9 @@ useEffect(() => {
   className="
     group
     flex-shrink-0
-    snap-center
-    w-[330px]
-    md:w-[360px]
+    snap-start
+   w-[300px]
+md:w-[320px]
     rounded-xl
     overflow-hidden
     shadow-lg
@@ -203,13 +240,14 @@ useEffect(() => {
                   src={item.image}
                   alt={item.title}
                   fill
+                  draggable={false}
                   className="object-cover group-hover:scale-105 transition duration-500"
                 />
               
                 <div className="absolute inset-0 bg-gradient-to-b 
                 from-transparent 
-                via-transparent 
-                to-[#23343f] 
+                via-[#23343f]/20
+to-[#23343f]
                 dark:to-[#23343f]" />
               </div>
 
