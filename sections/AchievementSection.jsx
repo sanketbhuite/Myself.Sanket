@@ -39,7 +39,7 @@ const achievements = [
     title: "Published Poet – Manadesh Magazine (2025–26)",
     issuer: "Sangola College",
     date: "2025 - Present",
-    image: "/achievements/poetry.jpg",
+    image: "/achievements/POET.jpeg",
     description:
       "Recognized for expressing creativity through poetry and spoken word performances, showcasing strong emotional storytelling, originality, and artistic expression alongside academic and technical pursuits.",
     tags: ["Poetry", "Creative Writing", "Artistic Expression"],
