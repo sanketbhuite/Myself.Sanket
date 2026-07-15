@@ -1,7 +1,7 @@
 # 🌐 Myself Sanket – Personal Portfolio  
 
 Welcome to the repository of my **personal portfolio website** 🎨  
-🚀 **Live Website**: [myself-sanket.netlify.app](https://myself-sanket.netlify.app)
+🚀 **Live Website**: [myself-sanket.netlify.app](https://myself-sanket.vercel.app)
 
 ---
 
